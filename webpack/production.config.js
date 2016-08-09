@@ -1,14 +1,15 @@
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const mainCSS = new ExtractTextPlugin('style.css', { allChunks: true });
+const mainCSS = new ExtractTextPlugin('redbeard-ui.css', { allChunks: true });
 
 module.exports = {
   module: {
     loaders: [
       {
         test: /\.css$/,
-        include: `${__dirname}/../src/styles`,
+        include: [path.resolve(__dirname, '../src/styles')],
         loader: mainCSS.extract(
           'style',
           [
@@ -22,5 +23,13 @@ module.exports = {
   plugins: [
     mainCSS,
     new webpack.optimize.UglifyJsPlugin({ minimize: true })
-  ]
+  ],
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
+  output: {
+    libraryTarget: 'umd',
+    library: 'redbeard-ui'
+  }
 };
