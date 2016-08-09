@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
 import styles from '../styles/button.css';
