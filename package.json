@@ -9,7 +9,7 @@
   "scripts": {
     "start": "start-storybook -p 9001 -c ./stories",
     "build": "NODE_ENV=production webpack",
-    "test": "NODE_ENV=test _mocha && npm run lint",
+    "test": "_mocha && npm run lint",
     "cover": "istanbul cover _mocha",
     "check-coverage": "istanbul check-coverage",
     "lint": "eslint src test",
