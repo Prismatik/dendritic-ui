@@ -1,1 +1,1 @@
-exports.Button = require('./components/button');
+export { default as Button } from './components/button';
