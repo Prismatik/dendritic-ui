@@ -1,5 +1,24 @@
 # Redbeard UI
 
+## Usage
+
+### Components
+
+Import the component you want to use from `redbeard-ui`:
+
+```
+import { Button } from 'redbeard-ui';
+<Button /> // usage
+
+```
+
+### Styles
+
+Redbeard UI comes bundled with default styles that can be included from:
+```
+require('redbeard-ui/dist/redbeard-ui.css');
+```
+
 ## Development
 
 ```
@@ -13,6 +32,12 @@ development will be done here.
 
 ```
 npm test
+```
+
+Coverage information is also available with `istanbul`:
+```
+npm run cover
+npm run check-coverage // checks coverage stats against thresholds
 ```
 
 ## Production
