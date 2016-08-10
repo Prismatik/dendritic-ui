@@ -34,10 +34,15 @@ development will be done here.
 npm test
 ```
 
-Coverage information is also available with `istanbul`:
+Test coverage information is also available with `istanbul`:
 ```
 npm run cover
-npm run check-coverage // checks coverage stats against thresholds
+```
+
+You can also check current test coverage against the default thresholds (must
+run `npm run cover` at least once prior to generate report `.json`):
+```
+npm run check-coverage
 ```
 
 ## Production
