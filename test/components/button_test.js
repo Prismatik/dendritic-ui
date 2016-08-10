@@ -53,7 +53,7 @@ describe('<Button />', () => {
 
     it('must not fire a click event when busy', () => {
       const onClick = spy();
-      const el = <Button handleOnClick={onClick} busy>Hello</Button>;
+      const el = <Button onClick={onClick} busy>Hello</Button>;
 
       shallow(el).find('button').simulate('click');
       onClick.notCalled.must.be.true();
@@ -61,7 +61,7 @@ describe('<Button />', () => {
 
     it('must fire a click event when clicked', () => {
       const onClick = spy();
-      const el = <Button handleOnClick={onClick}>Hello</Button>;
+      const el = <Button onClick={onClick}>Hello</Button>;
 
       shallow(el).find('button').simulate('click');
       onClick.calledOnce.must.be.true();
