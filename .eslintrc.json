@@ -1,3 +1,6 @@
 {
-  "extends": "prismatik"
+  "extends": "prismatik",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
 }
