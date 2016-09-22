@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const mainCSS = new ExtractTextPlugin('redbeard-ui.css', { allChunks: true });
+const mainCSS = new ExtractTextPlugin('dendritic-ui.css', { allChunks: true });
 
 module.exports = {
   module: {
@@ -30,6 +30,6 @@ module.exports = {
   },
   output: {
     libraryTarget: 'umd',
-    library: 'redbeard-ui'
+    library: 'dendritic-ui'
   }
 };

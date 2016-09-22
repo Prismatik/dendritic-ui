@@ -1,22 +1,22 @@
-# Redbeard UI
+# Dendritic UI
 
 ## Usage
 
 ### Components
 
-Import the component you want to use from `redbeard-ui`:
+Import the component you want to use from `dendritic-ui`:
 
 ```
-import { Button } from 'redbeard-ui';
+import { Button } from 'dendritic-ui';
 <Button /> // usage
 
 ```
 
 ### Styles
 
-Redbeard UI comes bundled with default styles that can be included from:
+Dendritic UI comes bundled with default styles that can be included from:
 ```
-require('redbeard-ui/dist/redbeard-ui.css');
+require('dendritic-ui/dist/dendritic-ui.css');
 ```
 
 ## Development

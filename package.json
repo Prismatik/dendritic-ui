@@ -1,5 +1,5 @@
 {
-  "name": "redbeard-ui",
+  "name": "dendritic-ui",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Prismatik/redbeard-ui.git"
+    "url": "git+https://github.com/Prismatik/dendritic-ui.git"
   },
   "keywords": [
-    "redbeard",
+    "dendritic",
     "ui",
     "react",
     "component"
@@ -29,11 +29,12 @@
   "author": "Prismatik <info@prismatik.com.au> (http://blog.prismatik.com.au)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Prismatik/redbeard-ui/issues"
+    "url": "https://github.com/Prismatik/dendritic-ui/issues"
   },
-  "homepage": "https://github.com/Prismatik/redbeard-ui#readme",
+  "homepage": "https://github.com/Prismatik/dendritic-ui#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "jsdom": "^9.5.0",
     "lodash": "^4.14.2",
     "react": "^15.3.0",
     "react-css-modules": "^3.7.9",
