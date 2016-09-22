@@ -34,16 +34,11 @@
   "homepage": "https://github.com/Prismatik/dendritic-ui#readme",
   "dependencies": {
     "classnames": "^2.2.5",
-    "css-modules-require-hook": "^4.0.1",
-    "enzyme": "^2.4.1",
     "jsdom": "^9.5.0",
     "lodash": "^4.14.2",
-    "must": "^0.13.2",
-    "must-jsx": "^4.0.0",
     "react": "^15.3.0",
     "react-css-modules": "^3.7.9",
-    "react-dom": "^15.3.0",
-    "sinon": "^1.17.5"
+    "react-dom": "^15.3.0"
   },
   "peerDependencies": {
     "react": "^15.3.0",
@@ -58,16 +53,21 @@
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.11.6",
     "css-loader": "^0.23.1",
+    "css-modules-require-hook": "^4.0.1",
+    "enzyme": "^2.4.1",
     "eslint": "^3.2.2",
     "eslint-config-prismatik": "^2.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "husky": "^0.11.6",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^3.0.2",
+    "must": "^0.13.2",
+    "must-jsx": "^4.0.0",
     "postcss-loader": "^0.9.1",
     "postcss-modules-values": "^1.1.3",
     "postcss-nested": "^1.0.0",
     "postcss-units": "^1.0.0",
+    "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   }
