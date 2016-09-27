@@ -4,6 +4,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /fonts\/.*?\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'file?name=fonts/[name].[ext]'
+      },
+      {
         test: /\.css$/,
         loaders: [
           'style',
