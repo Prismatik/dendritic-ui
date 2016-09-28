@@ -12,4 +12,7 @@ storiesOf('<Icon />', module)
   ))
   .add('button github', () => (
     <button><Icon type="github" /></button>
+  ))
+  .add('non-existent type', () => (
+    <Icon type="khakh.rjk.re" />
   ));
