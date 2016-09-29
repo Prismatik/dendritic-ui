@@ -4,7 +4,7 @@ import Input from '../../src/components/input';
 
 storiesOf('<Input />', module)
   .add('text', () => (
-    <Input label="some label" type="text" />
+    <Input label="some label" type="text" name="text" />
   ))
   .add('TextArea', () => (
     <Input
