@@ -12,8 +12,6 @@ const Checkbox = props =>
   <div>{props.type}</div>;
 
 const Radio = ({ schema }) =>
-
-
   <div>
     {
       schema.options.map((option, i) =>
@@ -22,7 +20,7 @@ const Radio = ({ schema }) =>
         </div>
       )
     }
-  </div>
+  </div>;
 
 const TextArea = props =>
   <div>{props.type}</div>;
@@ -66,7 +64,8 @@ const Input = props => {
 
 const propTypes = {
   type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']),
-  label: PropTypes.string
+  label: PropTypes.string,
+  schema: PropTypes.object
 };
 
 Text.propTypes = propTypes;
