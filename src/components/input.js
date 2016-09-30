@@ -11,8 +11,18 @@ const Password = props =>
 const Checkbox = props =>
   <div>{props.type}</div>;
 
-const Radio = props =>
-  <div>{props.type}</div>;
+const Radio = ({ schema }) =>
+
+
+  <div>
+    {
+      schema.options.map((option, i) =>
+        <div key={i}>
+          <input type="radio" value={option} /> {option}
+        </div>
+      )
+    }
+  </div>
 
 const TextArea = props =>
   <div>{props.type}</div>;
