@@ -34,6 +34,7 @@
   "homepage": "https://github.com/Prismatik/dendritic-ui#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "font-awesome": "^4.6.3",
     "jsdom": "^9.5.0",
     "lodash": "^4.14.2",
     "react": "^15.3.0",
