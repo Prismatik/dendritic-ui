@@ -16,7 +16,12 @@ const Radio = ({ schema }) =>
     {
       schema.options.map((option, i) =>
         <div key={i}>
-          <input type="radio" value={option} /> {option}
+          <input
+            name={`radio_${Date.now()}`}
+            type="radio"
+            value={option}
+          />
+          {option}
         </div>
       )
     }
@@ -65,7 +70,12 @@ const Input = props => {
 const propTypes = {
   type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']),
   label: PropTypes.string,
-  schema: PropTypes.object
+  schema: PropTypes.object,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  pattern: PropTypes.string,
+  ref: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  error: PropTypes.string
 };
 
 Text.propTypes = propTypes;
