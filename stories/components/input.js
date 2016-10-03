@@ -7,16 +7,19 @@ storiesOf('<Input />', module)
     <Input label="some label" type="text" />
   ))
   .add('radio', () => {
+    const name = 'someName';
     const schema = {
       type: 'string',
       options: ['optionA', 'optionB', 'optionC']
     };
+    const ref = 'someRef';
 
     return (
       <Input
         label="Radio Label"
         type="radio"
         schema={schema}
+        name={name}
       />
     );
   });

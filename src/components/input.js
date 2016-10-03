@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
 import styles from '../styles/button.css';
+import Radio from './input_radio';
 
 const Text = props =>
   <div>{props.type}</div>;
@@ -10,22 +11,6 @@ const Password = props =>
 
 const Checkbox = props =>
   <div>{props.type}</div>;
-
-const Radio = ({ schema }) =>
-  <div>
-    {
-      schema.options.map((option, i) =>
-        <div key={i}>
-          <input
-            name={`radio_${Date.now()}`}
-            type="radio"
-            value={option}
-          />
-          {option}
-        </div>
-      )
-    }
-  </div>;
 
 const TextArea = props =>
   <div>{props.type}</div>;
@@ -75,13 +60,13 @@ const propTypes = {
   required: PropTypes.bool,
   pattern: PropTypes.string,
   ref: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  error: PropTypes.string
+  error: PropTypes.string,
+  name: PropTypes.string
 };
 
 Text.propTypes = propTypes;
 Password.propTypes = propTypes;
 Checkbox.propTypes = propTypes;
-Radio.propTypes = propTypes;
 TextArea.propTypes = propTypes;
 Select.propTypes = propTypes;
 Input.propTypes = propTypes;
