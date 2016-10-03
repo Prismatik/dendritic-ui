@@ -46,7 +46,7 @@ const Input = props => {
 
   return (
     <div>
-      <label htmlFor="something">{props.label}</label>
+      <label htmlFor={props.name}>{props.label}</label>
       {input}
     </div>
   );
