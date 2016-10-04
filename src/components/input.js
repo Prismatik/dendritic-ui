@@ -59,7 +59,6 @@ const propTypes = {
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   pattern: PropTypes.string,
-  ref: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   error: PropTypes.string,
   name: PropTypes.string
 };

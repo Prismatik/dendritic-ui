@@ -1,34 +1,55 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const Radio = ({ schema, name }) => {
-  const radioOptions = schema.options.map((option, i) => {
-    const id = `${name}_${i}`;
+class Radio extends Component {
+  get value() {
+    return this.innerInput.value;
+  }
+
+  set value(value) {
+    this.innerInput = value;
+  }
+
+  refInnerInput(ref) {
+    this.innerInput = ref;
+  }
+
+  render() {
+    const { type, schema, name, required } = this.props;
 
     return (
-      <div key={i}>
-        <input
-          id={id}
-          name={name}
-          type="radio"
-          value={option}
-        />
-        <label htmlFor={id}>{option}</label>
+      <div>
+        {
+          schema.options.map((option, i) => {
+            // Used to associate radio buttons with adjacent labels
+            const id = `${name}_${i}`;
+
+            const props = {
+              id,
+              name,
+              type,
+              value: option,
+              ref: this.refInnerInput,
+              required
+            };
+
+            return (
+              <div key={i}>
+                <input {...props} />
+                <label htmlFor={id}>{option}</label>
+              </div>
+            );
+          })
+        }
       </div>
     );
-  });
-
-  return (
-    <div>
-      {radioOptions}
-    </div>
-  );
-};
+  }
+}
 
 Radio.propTypes = {
   schema: PropTypes.object,
   required: PropTypes.bool,
-  ref: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  name: PropTypes.string
+  name: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default Radio;
