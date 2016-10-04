@@ -53,14 +53,14 @@ const Input = props => {
 };
 
 const propTypes = {
-  type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']),
-  label: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']).isRequired,
+  label: PropTypes.string.isRequired,
   schema: PropTypes.object,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   pattern: PropTypes.string,
   error: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string.isRequired
 };
 
 Text.propTypes = propTypes;
