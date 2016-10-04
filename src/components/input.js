@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
 import styles from '../styles/button.css';
+import TextArea from './input_textArea';
 
 const Text = props =>
   <div>{props.type}</div>;
@@ -12,9 +13,6 @@ const Checkbox = props =>
   <div>{props.type}</div>;
 
 const Radio = props =>
-  <div>{props.type}</div>;
-
-const TextArea = props =>
   <div>{props.type}</div>;
 
 const Select = props =>
@@ -48,7 +46,7 @@ const Input = props => {
 
   return (
     <div>
-      <label htmlFor="something">{props.label}</label>
+      <label htmlFor={props.name}>{props.label}</label>
       {input}
     </div>
   );
@@ -56,14 +54,14 @@ const Input = props => {
 
 const propTypes = {
   type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']),
-  label: PropTypes.string
+  label: PropTypes.string,
+  name: PropTypes.string
 };
 
 Text.propTypes = propTypes;
 Password.propTypes = propTypes;
 Checkbox.propTypes = propTypes;
 Radio.propTypes = propTypes;
-TextArea.propTypes = propTypes;
 Select.propTypes = propTypes;
 Input.propTypes = propTypes;
 
