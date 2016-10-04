@@ -12,5 +12,6 @@ storiesOf('<Input />', module)
       type="textarea"
       name="propertyName"
       value="some value goes here"
+      placeholder="Enter Text Here"
     />
   ));

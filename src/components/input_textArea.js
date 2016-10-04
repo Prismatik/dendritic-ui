@@ -6,10 +6,6 @@ class TextArea extends Component {
     this.refInnerInput = this.refInnerInput.bind(this);
   }
 
-  componentDidMount() {
-    this.innerInput.value = this.props.value;
-  }
-
   get value() {
     return this.innerInput.value;
   }
@@ -23,11 +19,14 @@ class TextArea extends Component {
   }
 
   render() {
-    const { name, required } = this.props;
+    const { name, required, placeholder, value } = this.props;
     const props = {
       id: name,
+      name,
       ref: this.refInnerInput,
-      required
+      required,
+      placeholder,
+      defaultValue: value
     };
 
     return (
@@ -41,7 +40,8 @@ class TextArea extends Component {
 TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   required: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
+  placeholder: PropTypes.string
 };
 
 export default TextArea;
