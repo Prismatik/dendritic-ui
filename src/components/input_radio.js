@@ -46,10 +46,10 @@ class Radio extends Component {
 }
 
 Radio.propTypes = {
-  schema: PropTypes.object,
+  schema: PropTypes.object.isRequired,
   required: PropTypes.bool,
-  name: PropTypes.string,
-  type: PropTypes.string
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 };
 
 export default Radio;
