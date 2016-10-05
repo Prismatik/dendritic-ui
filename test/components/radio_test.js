@@ -15,7 +15,7 @@ describe('<Radio />', () => {
         type="radio"
         name="gender"
         schema={schema}
-        required="true"
+        required
       />
     );
 
@@ -27,7 +27,7 @@ describe('<Radio />', () => {
             type="radio"
             name="gender"
             value="male"
-            required="true"
+            required
             ref={noop}
           />
           <label htmlFor="gender_0">male</label>
@@ -38,7 +38,7 @@ describe('<Radio />', () => {
             type="radio"
             name="gender"
             value="female"
-            required="true"
+            required
             ref={noop}
           />
           <label htmlFor="gender_1">female</label>
