@@ -1,6 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
 class Radio extends Component {
+  constructor() {
+    super();
+    this.refInnerInput = this.refInnerInput.bind(this);
+  }
+
   get value() {
     return this.innerInput.value;
   }
