@@ -3,19 +3,35 @@ import React, { Component, PropTypes } from 'react';
 class Radio extends Component {
   constructor() {
     super();
-    this.refInnerInput = this.refInnerInput.bind(this);
+    this.inputRefs = [];
+    this.refInput = this.refInput.bind(this);
   }
 
   get value() {
-    return this.innerInput.value;
+    for (let i = 0; i < this.inputRefs.length; i++) {
+      const ref = this.inputRefs[i];
+
+      if (ref.checked) {
+        return ref.value;
+      }
+    }
+
+    return undefined;
   }
 
   set value(value) {
-    this.innerInput = value;
+    for (let i = 0; i < this.inputRefs.length; i++) {
+      const ref = this.inputRefs[i];
+
+      if (ref.value === value) {
+        ref.checked = true;
+        break;
+      }
+    }
   }
 
-  refInnerInput(ref) {
-    this.innerInput = ref;
+  refInput(ref) {
+    this.inputRefs.push(ref);
   }
 
   render() {
@@ -33,7 +49,7 @@ class Radio extends Component {
               name,
               type,
               value: option,
-              ref: this.refInnerInput,
+              ref: this.refInput,
               required
             };
 
