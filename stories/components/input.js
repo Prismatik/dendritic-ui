@@ -15,7 +15,7 @@ storiesOf('<Input />', module)
 
     return (
       <Input
-        label="Radio Label:"
+        label="Age:"
         type="radio"
         schema={schema}
         name={name}
@@ -27,7 +27,7 @@ storiesOf('<Input />', module)
 
     return (
       <Input
-        label="Radio Label:"
+        label="Age:"
         type="radio"
         name={name}
       />
