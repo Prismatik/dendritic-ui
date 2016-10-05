@@ -1,6 +1,6 @@
-// import { mount } from 'enzyme';
+// import { shallow, mount } from 'enzyme';
 // import React from 'react';
-// import Input from '../../src/components/input';
+// import Radio from '../../src/components/input_radio';
 //
 // describe('<Radio />', () => {
 //   it('must render using options from schema', () => {
@@ -10,33 +10,40 @@
 //     };
 //
 //     const el = (
-//       <Input
+//       <Radio
 //         type="radio"
 //         name="gender"
 //         schema={schema}
-//         label="Gender:"
+//         required="true"
 //       />
 //     );
 //
 //     const rendered = (
 //       <div>
-//         <label for="gender">"Gender:"</label>
-//         <input
-//           id="gender"
-//           type="radio"
-//           name="gender"
-//           value="male"
-//         />
-//         <input
-//           id="gender"
-//           type="radio"
-//           name="gender"
-//           value="female"
-//         />
+//         <div>
+//           <input
+//             id="gender_0"
+//             type="radio"
+//             name="gender"
+//             value="male"
+//             required="true"
+//           />
+//           <label htmlFor="gender_0">male</label>
+//         </div>
+//         <div>
+//           <input
+//             id="gender_1"
+//             type="radio"
+//             name="gender"
+//             value="female"
+//             required="true"
+//           />
+//           <label htmlFor="gender_1">female</label>
+//         </div>
 //       </div>
 //     );
 //
-//     mount(el).get(1).must.be.jsx(rendered);
+//     shallow(el).get(0).must.be.jsx(rendered);
 //   });
 //
 //   it('must render an error message if no schema is passed', () => {
