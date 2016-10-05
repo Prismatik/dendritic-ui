@@ -6,11 +6,11 @@ storiesOf('<Input />', module)
   .add('text', () => (
     <Input label="some label" type="text" />
   ))
-  .add('radio', () => {
-    const name = 'propertyName';
+  .add('Radio', () => {
+    const name = 'age';
     const schema = {
       type: 'string',
-      options: ['optionA', 'optionB', 'optionC']
+      options: ['Under 18', '18-25', '26-30', '30+']
     };
 
     return (
@@ -18,6 +18,17 @@ storiesOf('<Input />', module)
         label="Radio Label:"
         type="radio"
         schema={schema}
+        name={name}
+      />
+    );
+  })
+  .add('Radio (without schema)', () => {
+    const name = 'propertyName';
+
+    return (
+      <Input
+        label="Radio Label:"
+        type="radio"
         name={name}
       />
     );

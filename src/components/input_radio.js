@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash';
 
 class Radio extends Component {
   constructor() {
@@ -36,11 +37,16 @@ class Radio extends Component {
 
   render() {
     const { type, schema, name, required } = this.props;
+    const options = _.get(schema, 'options');
+
+    if (!options) {
+      return <div>[No options provided, check schema]</div>;
+    }
 
     return (
       <div>
         {
-          schema.options.map((option, i) => {
+          options.map((option, i) => {
             // Used to associate radio buttons with adjacent labels
             const id = `${name}_${i}`;
 
