@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
 import styles from '../styles/button.css';
+import Radio from './input_radio';
 
 const Text = props =>
   <div>{props.type}</div>;
@@ -9,9 +10,6 @@ const Password = props =>
   <div>{props.type}</div>;
 
 const Checkbox = props =>
-  <div>{props.type}</div>;
-
-const Radio = props =>
   <div>{props.type}</div>;
 
 const TextArea = props =>
@@ -48,21 +46,26 @@ const Input = props => {
 
   return (
     <div>
-      <label htmlFor="something">{props.label}</label>
+      <label htmlFor={props.name}>{props.label}</label>
       {input}
     </div>
   );
 };
 
 const propTypes = {
-  type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']),
-  label: PropTypes.string
+  type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']).isRequired,
+  label: PropTypes.string.isRequired,
+  schema: PropTypes.object,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  pattern: PropTypes.string,
+  error: PropTypes.string,
+  name: PropTypes.string.isRequired
 };
 
 Text.propTypes = propTypes;
 Password.propTypes = propTypes;
 Checkbox.propTypes = propTypes;
-Radio.propTypes = propTypes;
 TextArea.propTypes = propTypes;
 Select.propTypes = propTypes;
 Input.propTypes = propTypes;

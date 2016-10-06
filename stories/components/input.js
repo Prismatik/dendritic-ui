@@ -5,4 +5,31 @@ import Input from '../../src/components/input';
 storiesOf('<Input />', module)
   .add('text', () => (
     <Input label="some label" type="text" />
-  ));
+  ))
+  .add('Radio', () => {
+    const name = 'age';
+    const schema = {
+      type: 'string',
+      options: ['Under 18', '18-25', '26-30', '30+']
+    };
+
+    return (
+      <Input
+        label="Age:"
+        type="radio"
+        schema={schema}
+        name={name}
+      />
+    );
+  })
+  .add('Radio (without schema)', () => {
+    const name = 'propertyName';
+
+    return (
+      <Input
+        label="Age:"
+        type="radio"
+        name={name}
+      />
+    );
+  });
