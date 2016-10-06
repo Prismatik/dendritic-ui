@@ -1,11 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 class TextArea extends Component {
-  constructor() {
-    super();
-    this.refInnerInput = this.refInnerInput.bind(this);
-  }
-
   get value() {
     return this.innerInput.value;
   }
@@ -14,24 +9,17 @@ class TextArea extends Component {
     this.innerInput.value = value;
   }
 
-  refInnerInput(ref) {
-    this.innerInput = ref;
-  }
-
   render() {
     const { name, required, placeholder, value } = this.props;
-    const props = {
-      id: name,
-      name,
-      ref: this.refInnerInput,
-      required,
-      placeholder,
-      defaultValue: value
-    };
 
     return (
       <textarea
-        {...props}
+        id={name}
+        name={name}
+        ref={ref => { this.innerInput = ref; }}
+        required={required}
+        placeholder={placeholder}
+        defaultValue={value}
       />
     );
   }
