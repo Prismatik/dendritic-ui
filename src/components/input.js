@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
-import styles from '../styles/button.css';
+import styles from '../styles/input.css';
 import Radio from './input_radio';
 
 const Text = props =>
