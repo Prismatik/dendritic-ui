@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import Input from '../../src/components/input';
 import Radio from '../../src/components/input_radio';
-import TextArea from '../../src/components/input_textArea';
+import TextArea from '../../src/components/input_text_area';
 
 describe('<Input />', () => {
   describe('type="radio"', () => {

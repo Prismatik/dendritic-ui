@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
 import styles from '../styles/button.css';
-import TextArea from './input_textArea';
+import TextArea from './input_text_area';
 import Radio from './input_radio';
 
 const Text = props =>
