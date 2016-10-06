@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import _ from 'lodash';
 
 class Radio extends Component {
   constructor() {
@@ -37,7 +36,7 @@ class Radio extends Component {
 
   render() {
     const { type, schema, name, required } = this.props;
-    const options = _.get(schema, 'options');
+    const { options } = schema;
 
     if (!options) {
       return <div>[No options provided to input]</div>;
