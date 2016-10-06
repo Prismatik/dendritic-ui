@@ -49,12 +49,22 @@ describe('<Radio />', () => {
     shallow(el).get(0).must.be.jsx(rendered);
   });
 
-  it('must render an error message if no schema is passed', () => {
-  });
+  it('must render an error message if no schema options are provided', () => {
+    const schema = {
+      type: 'string'
+    };
 
-  it('must expose a getter method', () => {
-  });
+    const el = (
+      <Radio
+        type="radio"
+        name="gender"
+        schema={schema}
+        required
+      />
+    );
 
-  it('must expose a setter method', () => {
+    const rendered = <div>[No options provided to input]</div>;
+
+    shallow(el).get(0).must.be.jsx(rendered);
   });
 });

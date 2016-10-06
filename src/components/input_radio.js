@@ -40,7 +40,7 @@ class Radio extends Component {
     const options = _.get(schema, 'options');
 
     if (!options) {
-      return <div>[No options provided, check schema]</div>;
+      return <div>[No options provided to input]</div>;
     }
 
     return (
