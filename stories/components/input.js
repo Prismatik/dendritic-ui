@@ -22,14 +22,18 @@ storiesOf('<Input />', module)
       />
     );
   })
-  .add('Radio (without schema)', () => {
-    const name = 'propertyName';
+  .add('Radio (without schema options)', () => {
+    const name = 'name';
+    const schema = {
+      type: 'string'
+    };
 
     return (
       <Input
         label="Age:"
         type="radio"
         name={name}
+        schema={schema}
       />
     );
   });
