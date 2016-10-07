@@ -6,6 +6,15 @@ storiesOf('<Input />', module)
   .add('text', () => (
     <Input label="some label" type="text" />
   ))
+  .add('TextArea', () => (
+    <Input
+      label="TextArea Label:"
+      type="textarea"
+      name="propertyName"
+      value="some value goes here"
+      placeholder="Enter Text Here"
+    />
+  ))
   .add('Radio', () => {
     const name = 'age';
     const schema = {

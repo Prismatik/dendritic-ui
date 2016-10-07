@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
-import styles from '../styles/input.css';
+import styles from '../styles/button.css';
+import TextArea from './input_text_area';
 import Radio from './input_radio';
 
 const Text = props =>
@@ -10,9 +11,6 @@ const Password = props =>
   <div>{props.type}</div>;
 
 const Checkbox = props =>
-  <div>{props.type}</div>;
-
-const TextArea = props =>
   <div>{props.type}</div>;
 
 const Select = props =>
@@ -66,7 +64,6 @@ const propTypes = {
 Text.propTypes = propTypes;
 Password.propTypes = propTypes;
 Checkbox.propTypes = propTypes;
-TextArea.propTypes = propTypes;
 Select.propTypes = propTypes;
 Input.propTypes = propTypes;
 
