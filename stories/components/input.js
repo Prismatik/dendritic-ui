@@ -33,6 +33,7 @@ storiesOf('<Input />', module)
         label="Age:"
         type="radio"
         name={name}
+        schema={schema}
       />
     );
   });
