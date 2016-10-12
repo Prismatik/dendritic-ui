@@ -4,7 +4,13 @@ class Radio extends Component {
   constructor() {
     super();
     this.inputRefs = [];
-    this.refInput = this.refInput.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
 
   get value() {
@@ -30,12 +36,8 @@ class Radio extends Component {
     }
   }
 
-  refInput(ref) {
-    this.inputRefs.push(ref);
-  }
-
   render() {
-    const { type, schema, name, required } = this.props;
+    const { type, schema = {}, name, required } = this.props;
     const { options } = schema;
 
     if (!options) {
@@ -49,18 +51,17 @@ class Radio extends Component {
             // Used to associate radio buttons with adjacent labels
             const id = `${name}_${i}`;
 
-            const props = {
-              id,
-              name,
-              type,
-              value: option,
-              ref: this.refInput,
-              required
-            };
-
             return (
               <div key={i}>
-                <input {...props} />
+                <input
+                  id={id}
+                  name={name}
+                  type={type}
+                  value={option}
+                  ref={(ref) => { this.inputRefs.push(ref); }}
+                  required={required}
+                  onChange={this.onChange}
+                />
                 <label htmlFor={id}>{option}</label>
               </div>
             );
@@ -72,10 +73,11 @@ class Radio extends Component {
 }
 
 Radio.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   schema: PropTypes.object.isRequired,
   required: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  onChange: PropTypes.func
 };
 
 export default Radio;
