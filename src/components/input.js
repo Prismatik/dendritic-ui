@@ -4,9 +4,7 @@ import styles from '../styles/button.css';
 import TextArea from './input_text_area';
 import Radio from './input_radio';
 import Text from './input_text';
-
-const Password = props =>
-  <div>{props.type}</div>;
+import Password from './input_password';
 
 const Checkbox = props =>
   <div>{props.type}</div>;
