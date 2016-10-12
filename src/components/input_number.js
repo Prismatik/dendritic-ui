@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 class Number extends Component {
   get value() {
-    return parseInt(this.innerInput.value, 10);
+    return parseFloat(this.innerInput.value);
   }
 
   set value(value) {
@@ -10,13 +10,26 @@ class Number extends Component {
   }
 
   render() {
-    const { name } = this.props;
-    return <input id={name} type="number" />;
+    const { name, value, placeholder, onChange } = this.props;
+
+    return (
+      <input
+        id={name}
+        onChange={onChange}
+        placeholder={placeholder}
+        ref={(ref) => { this.innerInput = ref; }}
+        type="number"
+        value={value}
+      />
+    );
   }
 }
 
 Number.propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  value: PropTypes.number
 };
 
 export default Number;

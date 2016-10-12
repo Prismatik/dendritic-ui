@@ -4,6 +4,7 @@ import Input from '../../src/components/input';
 import Radio from '../../src/components/input_radio';
 import TextArea from '../../src/components/input_text_area';
 import Text from '../../src/components/input_text';
+import Number from '../../src/components/input_number';
 
 describe('<Input />', () => {
   describe('type="radio"', () => {
@@ -101,6 +102,36 @@ describe('<Input />', () => {
       const wrapper = shallow(el);
       wrapper.instance().value = 'meow';
       wrapper.instance().value.must.equal('meow');
+    });
+  });
+
+  describe('type="number"', () => {
+    it('must render correct component', () => {
+      const el = (
+        <Input
+          type="number"
+          name="age"
+          placeholder="Enter a number"
+          label="Age:"
+        />
+      );
+
+      shallow(el).find(Number).must.have.length(1);
+    });
+
+    it('must expose getter/setter for value', () => {
+      const el = (
+        <Input
+          type="number"
+          name="age"
+          placeholder="Enter a number"
+          label="Age:"
+        />
+      );
+
+      const wrapper = shallow(el);
+      wrapper.instance().value = 12;
+      wrapper.instance().value.must.equal(12);
     });
   });
 });
