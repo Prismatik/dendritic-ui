@@ -4,6 +4,13 @@ class Radio extends Component {
   constructor() {
     super();
     this.inputRefs = [];
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   }
 
   get value() {
@@ -53,6 +60,7 @@ class Radio extends Component {
                   value={option}
                   ref={(ref) => { this.inputRefs.push(ref); }}
                   required={required}
+                  onChange={this.onChange}
                 />
                 <label htmlFor={id}>{option}</label>
               </div>
@@ -65,10 +73,11 @@ class Radio extends Component {
 }
 
 Radio.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   schema: PropTypes.object.isRequired,
   required: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  onChange: PropTypes.func
 };
 
 export default Radio;
