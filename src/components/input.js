@@ -4,6 +4,7 @@ import styles from '../styles/button.css';
 import TextArea from './input_text_area';
 import Radio from './input_radio';
 import Text from './input_text';
+import Number from './input_number';
 
 const Password = props =>
   <div>{props.type}</div>;
@@ -35,6 +36,9 @@ const Input = props => {
       break;
     case 'select':
       input = <Select {...props} />;
+      break;
+    case 'number':
+      input = <Number {...props} />;
       break;
     default:
       input = <Text {...props} />;
