@@ -8,6 +8,7 @@ function loadStories() {
   require('./components/input_text_area');
   require('./components/input_text');
   require('./components/input_number');
+  require('./components/input_password');
 }
 
 configure(loadStories, module);
