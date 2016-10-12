@@ -1,18 +1,14 @@
 import React, { PropTypes } from 'react';
 import cssModules from '../lib/react_css_modules';
-import styles from '../styles/input.css';
+import styles from '../styles/button.css';
+import TextArea from './input_text_area';
 import Radio from './input_radio';
-
-const Text = props =>
-  <div>{props.type}</div>;
+import Text from './input_text';
 
 const Password = props =>
   <div>{props.type}</div>;
 
 const Checkbox = props =>
-  <div>{props.type}</div>;
-
-const TextArea = props =>
   <div>{props.type}</div>;
 
 const Select = props =>
@@ -55,18 +51,26 @@ const Input = props => {
 const propTypes = {
   type: PropTypes.oneOf(['text', 'password', 'checkbox', 'radio', 'textarea', 'select']).isRequired,
   label: PropTypes.string.isRequired,
-  schema: PropTypes.object,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  pattern: PropTypes.string,
+  disabled: PropTypes.bool,
   error: PropTypes.string,
-  name: PropTypes.string.isRequired
+  id: PropTypes.string,
+  maxLength: PropTypes.number,
+  max: PropTypes.number,
+  min: PropTypes.number,
+  name: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  required: PropTypes.bool,
+  schema: PropTypes.object,
+  size: PropTypes.number,
+  step: PropTypes.number,
+  value: PropTypes.any
 };
 
 Text.propTypes = propTypes;
 Password.propTypes = propTypes;
 Checkbox.propTypes = propTypes;
-TextArea.propTypes = propTypes;
 Select.propTypes = propTypes;
 Input.propTypes = propTypes;
 
